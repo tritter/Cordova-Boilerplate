@@ -1,0 +1,19 @@
+<div data-role="header" data-position="fixed">
+    <h1>Books</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+</div>
+    
+<div data-role="content">	
+        <ul data-role="listview" data-inset="true" >
+          <!-- data is passed from template engine, 
+              and templat engine will execute the scripts inside <% %>
+          -->
+                <% for (var i = 0; i < data.length; i++) { %>
+                      <% var item = data[i]; %>
+                      <li>
+                        <a href="#detail/<%=item.name%>/<%= item.id%>"><%= item.name %></a>
+                      </li>
+                <% } %>
+        </ul>
+</div>
+
